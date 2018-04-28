@@ -74,8 +74,8 @@ if __name__ == '__main__':
 
 		print('error: ', ex, ey)
 
-		pan = pan + ex / width
-		tilt = tilt + ey / height
+		pan = pan + int(10 * ex / width)
+		tilt = tilt + int(10 * ey / height)
 
 		if pan > 90:
 			pan = 90
@@ -88,5 +88,7 @@ if __name__ == '__main__':
 			tilt = 90
 		
 		print('Moving to: ', pan, tilt)
+		#pt.pan(pan)
+		#pt.tilt(tilt)
 
 cv2.destroyAllWindows()
