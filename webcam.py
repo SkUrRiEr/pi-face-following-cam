@@ -59,7 +59,7 @@ class OpenCVCapture(object):
 		with self._capture_lock:
 			frame = self._capture_frame
 		# If there are problems, keep retrying until an image can be read.
-		while frame == None:
+		while frame is None:
 			time.sleep(0)
 			with self._capture_lock:
 				frame = self._capture_frame
