@@ -63,7 +63,8 @@ class OpenCVCapture(object):
 			time.sleep(0)
 			with self._capture_lock:
 				frame = self._capture_frame
-		# Save captured image for debugging.
-		cv2.imwrite(config.DEBUG_IMAGE, frame)
+		if config.DEBUG:
+			# Save captured image for debugging.
+			cv2.imwrite(config.DEBUG_IMAGE, frame)
 		# Return the capture image data.
 		return frame

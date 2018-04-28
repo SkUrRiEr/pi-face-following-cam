@@ -4,6 +4,8 @@
 # Edit the values below to configure the training and usage of the
 # face recognition box.
 
+DEBUG = False
+
 # Pi GPIO port which is connected to the lock servo signal line.
 LOCK_SERVO_PIN = 18
 # Pulse width value (in microseconds) for the servo at the unlocked and locked

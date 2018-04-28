@@ -24,7 +24,10 @@ if __name__ == '__main__':
 	#pt = pantilthat.PanTiltHat()
 	camera = config.get_camera()
 	print('Trying to follow faces.')
-	print('Press q to quit.')
+	if config.DEBUG:
+		print('Press q to quit.')
+	else:
+		print('Press Ctrl+C to quit.')
 
 	#pt.pan(0)
 	#pt.tilt(0)
@@ -44,7 +47,10 @@ if __name__ == '__main__':
 		image = camera.read()
 		# Convert image to grayscale.
 		image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-		cv2.imshow('frame', image)
+
+		if config.DEBUG:
+			cv2.imshow('frame', image)
+
 		# Get coordinates of single face in captured image.
 		result = face.detect_single(image)
 		if result is None:
@@ -53,8 +59,10 @@ if __name__ == '__main__':
 		x, y, w, h = result
 
 		print('Found face:', x, y, w, h)
-		cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 255), 3)
-		cv2.imshow('frame', image)
+
+		if config.DEBUG:
+			cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 255), 3)
+			cv2.imshow('frame', image)
 
 		# Centre of the face
 		cx = x + w / 2
