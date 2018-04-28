@@ -31,6 +31,8 @@ class OpenCVCapture(object):
 		self._camera = cv2.VideoCapture(device_id)
 		if not self._camera.isOpened():
 			self._camera.open()
+		self._camera.set(3, 320)
+		self._camera.set(4, 240)
 		# Start a thread to continuously capture frames.
 		# This must be done because different layers of buffering in the webcam
 		# and OS drivers will cause you to retrieve old frames if they aren't 
