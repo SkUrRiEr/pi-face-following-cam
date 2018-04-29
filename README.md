@@ -7,11 +7,13 @@ Based on the Adafruit / Tony DiCola face recognition locked box project.
 Dependencies
 ------------
 
-`python-opencv` must be installed and must be version 2.4.9 or newer
+The OpenCV bindings for Python 3 must be installed and must be version 2.4.9 or newer.
 
-You _MUST_ enable site packages in pipenv by running `pipenv --site-packages` otherwise it won't be able to find `python-opencv`
+The data shipped with OpenCV must also be available. (This is the `opencv_data` package in Debian)
 
 All other dependencies are managed using pipenv.
+
+You _MUST_ enable site packages in pipenv by running `pipenv --site-packages` otherwise it won't be able to find `python-opencv`
 
 
 Script Usage
